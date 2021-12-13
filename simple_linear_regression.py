@@ -11,7 +11,7 @@ y = dataset.iloc[:, -1].values
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 1/3, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.5, random_state = 0)
 
 # Training the Simple Linear Regression model on the Training set
 from sklearn.linear_model import LinearRegression
@@ -36,3 +36,11 @@ plt.title('Test set -Salary vs Experience & LR fitting line')
 plt.xlabel('Years of Experience')
 plt.ylabel('Salary')
 plt.show()
+
+##Further question to solve
+# Make prediction for the salary of an employee who has YOE=12
+regressor.predict([[12]]) #predict takes 2d array
+##draw the final LR equals by taking look at the coefficient
+regressor.coef_
+regressor.intercept_
+#FINAL LR Formula: Salary= coef_+intercept_
